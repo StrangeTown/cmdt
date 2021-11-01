@@ -107,20 +107,20 @@ html {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.history, .download {
+.history, .download, .note {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  width: 50%;
+  min-width: 0;
 }
 
-.history .title, .download .title {
+.history .title, .download .title, .note .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.history .chrome_tab_link, .download .chrome_tab_link {
+.history .chrome_tab_link, .download .chrome_tab_link, .note .chrome_tab_link {
   color: #a3907e;
   font-size: 12px;
   cursor: pointer;
@@ -128,8 +128,50 @@ html {
   font-style: italic;
 }
 
-.history .chrome_tab_link:hover, .download .chrome_tab_link:hover {
+.history .chrome_tab_link:hover, .download .chrome_tab_link:hover, .note .chrome_tab_link:hover {
   text-decoration: underline;
+}
+
+.download {
+  margin-left: 20px;
+}
+
+.note textarea {
+  background-color: transparent;
+  outline: none;
+  color: #cdd5d5;
+  border: 0.5px solid transparent;
+  border-radius: 3px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+.note textarea:hover {
+  border-color: #a3a3a3;
+}
+
+.note textarea::-webkit-input-placeholder {
+  color: #cdd5d5;
+  font-size: 12px;
+}
+
+.note textarea:-ms-input-placeholder {
+  color: #cdd5d5;
+  font-size: 12px;
+}
+
+.note textarea::-ms-input-placeholder {
+  color: #cdd5d5;
+  font-size: 12px;
+}
+
+.note textarea::placeholder {
+  color: #cdd5d5;
+  font-size: 12px;
 }
 
 #garden {
@@ -146,19 +188,30 @@ html {
           align-items: center;
 }
 
-.url_item a, .download_item a {
+.url_item .link_wrap, .download_item .link_wrap {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   margin-left: 12px;
-  color: #cdd5d5;
-  font-size: 12px;
+  min-width: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.url_item .link_wrap a, .download_item .link_wrap a {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  display: block;
+  max-width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: #cdd5d5;
+  font-size: 12px;
 }
 
-.url_item a:hover, .download_item a:hover {
+.url_item .link_wrap a:hover, .download_item .link_wrap a:hover {
   color: #f8f8f9;
 }
 

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "CMDT",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Simple new tab extension",
   "author": "Xing",
   "chrome_url_overrides" : {
@@ -11,7 +11,8 @@
     "history",
     "downloads",
     "tabs",
-    "downloads.open"
+    "downloads.open",
+    "storage"
   ],
   "icons": {
     "16": "images/icon16.png",

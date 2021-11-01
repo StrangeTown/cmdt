@@ -8,15 +8,6 @@ const $garden = $('#garden')
 const $history = $('.history_list')
 const $download = $('.downloads_list')
 
-const utils = (function () {
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max)
-  }
-  return {
-    getRandomInt,
-  }
-})()
-
 const gardenKeys = (function () {
   const leftKeys = [
     'q',
@@ -71,7 +62,7 @@ const gardenKeys = (function () {
 const gardenDom = (function () {
   const getUrlItem = (historyItem) => {
     const url = _.get(historyItem, 'url')
-    const title = _.get(historyItem, 'title')
+    const title = _.get(historyItem, 'title') || '(no title)'
     const key = gardenKeys.getKey()
     gardenKeys.addHotKey(key)
     const keyLabel = key.replace('+', '')
@@ -79,13 +70,15 @@ const gardenDom = (function () {
     return `
     <div class='url_item'>
       <div class="key" title="Press ${key.toUpperCase()}">${keyLabel}</div>
-      <a href='${url}' data-hot-key="${key}">${title}</a>
+      <div class="link_wrap">
+        <a href='${url}' data-hot-key="${key}">${title}</a>
+      </div>
     </div>
   `
   }
   const getDownloadItemEle = (downloadItem) => {
     const id = _.get(downloadItem, 'id')
-    const fileName = _.get(downloadItem, 'filename')
+    const fileName = _.get(downloadItem, 'filename') || '(no title)'
     const url = _.get(downloadItem, 'url')
 
     const filenameLabel = fileName.replace(/^.*[\\\/]/, '')
@@ -93,7 +86,9 @@ const gardenDom = (function () {
     return `
       <div class='download_item'>
         <div class='download_folder' data-id="${id}">📁</div>
-        <a href='${url}' data-id="${id}" target="_blank">${filenameLabel}</a>
+        <div class="link_wrap">
+          <a href='${url}' data-id="${id}" target="_blank">${filenameLabel}</a>
+        </div>
       </div>
     `
   }
@@ -130,6 +125,7 @@ const searchHistory = () => {
   chrome.history.search(
     { text: '', maxResults: config.historyMaxResults },
     function (data) {
+      console.log(data)
       let urls = ''
       data.forEach(function (page) {
         urls += gardenDom.getUrlItem(page)
@@ -151,25 +147,39 @@ const searchDownload = () => {
   })
 }
 
-const initBackgroundImage = () => {
-  const images = [
-    'https://z3.ax1x.com/2021/10/19/5d0lsH.jpg',
-    'https://z3.ax1x.com/2021/10/20/5BM8tH.jpg',
-    // 'https://z3.ax1x.com/2021/10/20/5BUlY6.jpg',
-    'https://z3.ax1x.com/2021/10/20/5Bd4QU.jpg'
-  ]
-  const imgIndex = utils.getRandomInt(images.length)
-  const imageUrl = images[imgIndex]
-  $('html').css('background-image', 'url(' + imageUrl + ')')
-}
+const note = (function () {
+  const noteStorageKey = 'note'
+  const noteTextarea = $('#note_textarea')
 
+  const listenNoteChange = () => {
+    noteTextarea.on('input', function (e) {
+      const value = e.target.value
+      chrome.storage.sync.set({
+        [noteStorageKey]: value
+      })
+    })
+  }
+  const initNoteValue = () => {
+    chrome.storage.sync.get([noteStorageKey], function(result) {
+      const noteValue = _.get(result, 'note')
+      noteTextarea.val(noteValue)
+    })
+  }
+
+  const init = () => {
+    initNoteValue()
+    listenNoteChange()
+  }
+  
+  return { init }
+})()
 const main = () => {
-  initBackgroundImage()
   gardenListener.listenChromeTab()
   searchHistory()
   searchDownload()
+  note.init()
 }
 
-$(function() {
+$(function () {
   main()
 })
