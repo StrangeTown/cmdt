@@ -11,36 +11,24 @@
   <body>
     <div id="garden">
       <div class="bottom">
-        <div class="history">
-          <div class="title">
-            <div class="chrome_tab_link" data-href="chrome://history/">
-              History:
-            </div>
-          </div>
-          <div class="history_list"></div>
-        </div>
-        <div class="download">
-          <div class="title">
-            <div class="chrome_tab_link" data-href="chrome://downloads/">
-              Downloads:
-            </div>
-          </div>
-          <div class="downloads_list"></div>
-        </div>
-        <div class="note">
+        <div class="note  bottom_section">
           <textarea
-            name=""
-            id="note_textarea"
-            cols="30"
-            rows="10"
-            placeholder="Write something here..."
+          name=""
+          id="note_textarea"
+          cols="30"
+          rows="10"
+          placeholder="Write some tips here..."
           ></textarea>
+        </div>
+        <div class="links bottom_section">
+          <!-- shortcuts -->
+          <!-- https://support.google.com/chrome/answer/157179?hl=en&co=GENIE.Platform%3DDesktop#zippy=%2Cgoogle-chrome-feature-shortcuts -->
         </div>
       </div>
     </div>
     <script src="./lib/jquery.min.js"></script>
     <script src="./lib/lodash.min.js"></script>
-    <script src="./lib/hotkeys.min.js"></script>
+    <!-- <script src="./lib/hotkeys.min.js"></script> -->
     <script src="script.js"></script>
   </body>
 </html>

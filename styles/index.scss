@@ -42,14 +42,25 @@ html {
 .bottom {
   position: fixed;
   bottom: 0;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   height: 220px;
   width: 100vw;
   left: 0;
   padding: 20;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.3);
+  .bottom_section {
+    .chrome_tab_link {
+      color: #a3907e;
+      font-size: 12px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      font-style: italic;
+      text-decoration: underline;
+      display: inline-block;
+    }
+  }
 }
 
 .history, .download, .note {
