@@ -1,4 +1,84 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   border: 0;
   font-size: 100%;
   font: inherit;
@@ -7,7 +87,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   padding: 0;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -15,15 +105,20 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: none;
 }
 
@@ -32,216 +127,97 @@ table {
   border-spacing: 0;
 }
 
-.shake {
-  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-}
-
-@-webkit-keyframes shake {
-  10%, 90% {
-    -webkit-transform: translate3d(-1px, 0, 0);
-            transform: translate3d(-1px, 0, 0);
-  }
-  20%, 80% {
-    -webkit-transform: translate3d(2px, 0, 0);
-            transform: translate3d(2px, 0, 0);
-  }
-  30%, 50%, 70% {
-    -webkit-transform: translate3d(-4px, 0, 0);
-            transform: translate3d(-4px, 0, 0);
-  }
-  40%, 60% {
-    -webkit-transform: translate3d(4px, 0, 0);
-            transform: translate3d(4px, 0, 0);
-  }
-}
-
-@keyframes shake {
-  10%, 90% {
-    -webkit-transform: translate3d(-1px, 0, 0);
-            transform: translate3d(-1px, 0, 0);
-  }
-  20%, 80% {
-    -webkit-transform: translate3d(2px, 0, 0);
-            transform: translate3d(2px, 0, 0);
-  }
-  30%, 50%, 70% {
-    -webkit-transform: translate3d(-4px, 0, 0);
-            transform: translate3d(-4px, 0, 0);
-  }
-  40%, 60% {
-    -webkit-transform: translate3d(4px, 0, 0);
-            transform: translate3d(4px, 0, 0);
-  }
-}
-
-html {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  background-color: #000;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.bottom {
-  position: fixed;
-  bottom: 0;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  height: 220px;
-  width: 100vw;
-  left: 0;
-  padding: 20;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.bottom .bottom_section .chrome_tab_link {
-  color: #a3907e;
-  font-size: 12px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  font-style: italic;
-  text-decoration: underline;
-  display: inline-block;
-}
-
-.history, .download, .note {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  min-width: 0;
-}
-
-.history .title, .download .title, .note .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.history .chrome_tab_link, .download .chrome_tab_link, .note .chrome_tab_link {
-  color: #a3907e;
-  font-size: 12px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  font-style: italic;
-}
-
-.history .chrome_tab_link:hover, .download .chrome_tab_link:hover, .note .chrome_tab_link:hover {
-  text-decoration: underline;
-}
-
-.download {
-  margin-left: 20px;
-}
-
-.note textarea {
-  background-color: transparent;
-  outline: none;
-  color: #cdd5d5;
-  border: 0.5px solid transparent;
-  border-radius: 3px;
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 12px;
-  width: 100%;
-  height: 100%;
-}
-
-.note textarea:hover {
-  border-color: #a3a3a3;
-}
-
-.note textarea::-webkit-input-placeholder {
-  color: #cdd5d5;
-  font-size: 12px;
-}
-
-.note textarea:-ms-input-placeholder {
-  color: #cdd5d5;
-  font-size: 12px;
-}
-
-.note textarea::-ms-input-placeholder {
-  color: #cdd5d5;
-  font-size: 12px;
-}
-
-.note textarea::placeholder {
-  color: #cdd5d5;
-  font-size: 12px;
-}
-
 #garden {
-  padding: 30px;
-}
-
-.url_item, .download_item {
-  margin-bottom: 10px;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fafafa;
+}
+
+#garden .main {
+  width: 100%;
+  max-width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.url_item .link_wrap, .download_item .link_wrap {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin-left: 12px;
-  min-width: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+#garden .main.focus .definition_img {
+  opacity: 1;
+  top: 0;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.url_item .link_wrap a, .download_item .link_wrap a {
-  -ms-grid-column-align: start;
-      justify-self: start;
-  display: block;
-  max-width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: #cdd5d5;
-  font-size: 12px;
+#garden .main.focus .definition {
+  opacity: 1;
+  bottom: 0;
 }
 
-.url_item .link_wrap a:hover, .download_item .link_wrap a:hover {
-  color: #f8f8f9;
+#garden .main.focus .sentence {
+  color: #dcdcdc5c;
 }
 
-.url_item .key {
-  text-transform: uppercase;
-  background: #595a5c;
-  color: #fff;
-  font-size: 13px;
-  padding: 4px 0;
-  border-radius: 2px;
-  width: 26px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 10px;
+#garden .sentence {
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.download_item .download_folder {
-  cursor: pointer;
-  font-size: 12px;
+#garden .sentence .word {
+  color: #ab1942;
+}
+
+#garden .sentence .word:hover {
+  color: #ab1942;
+  text-decoration: underline;
+}
+
+#garden .definition_img {
+  max-height: 300px;
+  max-width: 300px;
+  text-align: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: relative;
+  z-index: 0;
+  top: 20px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+#garden .definition {
+  margin-top: 20px;
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  text-align: center;
+  color: #898989;
+  position: relative;
+  bottom: 30px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 /*# sourceMappingURL=index.css.map */
